@@ -1581,9 +1581,11 @@ class ProductsController extends BaseController
     // import Products
     public function import_products(Request $request)
     {
+    
        
         $file_upload = $request->file('products');
         $ext = pathinfo($file_upload->getClientOriginalName(), PATHINFO_EXTENSION);
+        
         if ($ext != 'csv') {
             return response()->json([
                 'msg' => 'must be in csv format',

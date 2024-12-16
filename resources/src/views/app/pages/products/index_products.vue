@@ -483,6 +483,7 @@ export default {
       axios
         .post("products/import/csv", self.data)
         .then(response => {
+          console.log("hello")
           self.ImportProcessing = false;
           if (response.data.status === true) {
             this.makeToast(
@@ -493,7 +494,7 @@ export default {
             Fire.$emit("Event_import");
           } else if (response.data.status === false) {
             this.makeToast(
-              "danger",
+              "success",
               this.$t("field_must_be_in_csv_format"),
               this.$t("Failed")
             );

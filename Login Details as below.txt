@@ -1,0 +1,4 @@
+Login Details as below :
+
+Email : admin@example.com
+Password : 123456
